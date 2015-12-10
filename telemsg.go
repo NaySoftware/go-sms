@@ -43,7 +43,7 @@ type StatusResponse struct {
 	ResultDescription string `json:"resultDescription,omitempty"`
 }
 
-func NewClinet(user string, pass string) *Sms {
+func NewClient(user string, pass string) *Sms {
 	sms := new(Sms)
 
 	sms.Username = user
