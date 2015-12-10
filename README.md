@@ -1,2 +1,6 @@
 # go-sms
-SMS Library for telemessage service using Golang
+SMS Library for telemessage service in Golang
+
+for more info :
+http://developer.telemessage.com/REST/
+
