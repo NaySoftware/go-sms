@@ -1,5 +1,5 @@
 # go-sms
-SMS Library for telemessage service in Golang
+SMS Library for telemessage service - Golang
 
 for more info :
 http://developer.telemessage.com/REST/
@@ -17,7 +17,7 @@ import (
 
 func main() {
 
-	client := telemsg.NewClinet("username","password")
+	client := telemsg.NewClient("username","password")
 	client.NewMsg("+123456789", "Hello World")
 	status, err := client.Send()
 	if err != nil {
