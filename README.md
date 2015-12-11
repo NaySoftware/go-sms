@@ -42,13 +42,13 @@ For Multiple Recipients
 	client := telemsg.NewClient("username","password")
 	client.NewMsg("+1234", "Hello World")
 
-	
+
 	client.AddRecipients(list)
 
 
 	status, err := client.Send()
 	if err != nil {
-		fmt.Println("Hey, an Error is shown!!")
+		fmt.Println(err)
 	} else {
 		fmt.Println(status.ResultDescription)
 	}
