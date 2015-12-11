@@ -102,7 +102,6 @@ func (this *Sms) Send() (StatusResponse, error) {
 
 }
 
-
 func (this *Sms) generateJson() ([]byte, error) {
 
 	var objSms [2]Sms
@@ -132,20 +131,19 @@ func (this *Sms) generateJson() ([]byte, error) {
 	return d, err
 }
 
-
-func (this *Sms) AddRecipients(recipientList []string) {
+func (this *Sms) AddRecipients(recipientList []string) *Sms {
 
 	rLen := len(recipientList)
 	recipients := make([]SmsRecipient, rLen)
 
-
 	for i, record := range recipientList {
-		recipients[i] = new(SmsRecipient)
 		recipients[i].Class = RecipientClass
 		recipients[i].Description = MsgDescription
 		recipients[i].Type = MsgType
 		recipients[i].Value = record
 	}
 
-	this.Recipients = append(this.Recipients, recipients)
+	this.Recipients = append(this.Recipients, recipients...)
+
+	return this
 }
